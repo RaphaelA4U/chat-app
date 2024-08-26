@@ -79,6 +79,10 @@ io.on('connection', (socket) => {
     })
 })
 
+io.engine.on('connection_error', (err) => {
+    console.log('Connection error:', err);
+});
+
 server.listen(port, () => {
     console.log('Server is up on port 3000')
 })
